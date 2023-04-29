@@ -1,36 +1,70 @@
-# DIY-API-Client
+# Getting Started with Create React App
 
-Create a client for your DIY API Mongoose deliverable.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Getting Started
+## Available Scripts
 
-* fork and clone this repo
-* run `npx create-react-app .` to spin up a new react app
-* get crackin!
+In the project directory, you can run:
 
-## Steps to achieve
+### `npm start`
 
-The best place ot start is by planning out the app you will be making. What routes are serving data that you can consume? What React features will you need to implement? What kind of user experience would you like to create?
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Begin by making wireframes and a component diagram
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Keep in ming the user expirence while planning. User stories can help turn a user's experience into actionable items.
+### `npm test`
 
-Plan out for your app:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-* wireframes for every user view
-* a component diagram that is informed by your wireframes and user experience
-* the routes you will need on the front end
+### `npm run build`
 
-### Implement your design!
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-* Create the components you will need and the skeleton of the app
-* After getting the scaffolding ready, implement your components one by one
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### Keep in mind:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-* you need your server running to deliver data to your react app
-* you will ned to touch a `.env.local` and put your server's url in is as `REACT_APP_ < variable name >`
-  * the format for your dev server's url should be `http://localhost: < the port express in running on >`
-  * use `process.env.REACT_APP_ < variable name >` to access your server's url in your react app
-* there is no right or wrong way to complete this assignment, have fun and experiment! 
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
