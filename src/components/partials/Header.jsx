@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
     return (
         <nav>
-            Header navbar
+            <p>
+                < Link to="/">Home</Link>
+            </p>
         </nav>
     )
 }
