@@ -28,7 +28,7 @@ export default function BlogDetails() {
         form
       );
       console.log("updated blog response:", putResponse.data);
-      setBlog(putResponse.data.result);
+      setBlog(putResponse.data.blog);
       setForm(false);
     } catch (err) {
       console.log(err);
@@ -54,13 +54,13 @@ export default function BlogDetails() {
   
 
 const details = (
+
   <>
     <h1>Details for {blog.title}</h1>
 
     <p>By {blog.name}</p>
 
     <p>{blog.content}</p>
-
     <button onClick={handleDeleteClick}>Delete Bounty</button>
   </>
 );
