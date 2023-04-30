@@ -63,7 +63,7 @@ export default function Home() {
             {!showForm && <button
                 onClick={() => setShowForm(true)}
             >
-                New Post?
+                Create New Post
             </button>}
 
             {!showForm ?
