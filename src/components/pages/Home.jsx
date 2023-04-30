@@ -13,12 +13,13 @@ export default function Home() {
         const url = `${process.env.REACT_APP_SERVER_URL}/posts`
         axios.get(url)
             .then(response => {
-                console.log(response.data)
-                setPosts(response.data.results)
+                console.log("useEffect log response data: ", response.data)
+                setPosts(response.data)
+
             })
             .catch(console.warn)
     }, [])
-    console.log(process.env.REACT_APP_SERVER_URL)
+    // console.log(process.env.REACT_APP_SERVER_URL)
 
     const handleSubmit = async (e, form) => {
         e.preventDefault()
@@ -29,7 +30,7 @@ export default function Home() {
             // post the new blog post to the backend
             await axios.post(`${process.env.REACT_APP_SERVER_URL}/posts`, form)
             const allPosts = await axios.get(`${process.env.REACT_APP_SERVER_URL}/posts`)
-            setPosts(allPosts.data.results) // update the state
+            setPosts(allPosts.data) // update the state
             setShowForm(false) // close the form
         } catch (err) {
             console.warn(err)
@@ -46,7 +47,7 @@ export default function Home() {
 
     const postListItems = posts.map(post => {
         return (
-            <div key={`post-li-${post.id}`}>
+            <div key={`post-li-${post._id}`}>
                 <Link to={`/posts/${post._id}`}>
                     {post.title} <small> by {post.name}</small>
                 </Link>
