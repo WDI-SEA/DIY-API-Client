@@ -5,12 +5,14 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import BlogForm from "../partials/BlogForm"
+
 
 export default function Home() {
     const [content, setContent] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:8000/blogs')
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/blogs`)
         .then(response=> {
             const data = response.data.results
             setContent(data)
@@ -18,11 +20,12 @@ export default function Home() {
         .catch(console.warn)
     }, [])
 
+   
     const allTitles = content.map(blog=> {
         return(
-            
+           
             <li style={{ listStyleType: "none" }} key={`blog title ${blog.title}`}>
-                <Link to= {`/blog/${blog.id}`}>{blog.title}</Link>
+                <Link to= {`/blog/${blog._id}`}>{blog.title}</Link>
             </li>
         )
     })

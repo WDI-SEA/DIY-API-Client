@@ -6,7 +6,6 @@ export default function NavBar() {
     return(
         <nav>
             <Link to='/'>Home | </Link>
-            <Link to='/blog'>Blog | </Link>
             <Link to='/create'>Post </Link>
         </nav>
     )

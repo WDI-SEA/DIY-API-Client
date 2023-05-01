@@ -20,7 +20,7 @@ function App() {
             element={<Home />}
             />
             <Route 
-            path='/blog'
+            path='/blog/:id'
             element={<Blog />}
             />
             <Route 
