@@ -3,6 +3,14 @@ html {
   color: white;
 }
 
+a {
+  color: white;
+}
+
+a:visited {
+  color: grey;
+}
+
 .App {
   text-align: center;
 }
