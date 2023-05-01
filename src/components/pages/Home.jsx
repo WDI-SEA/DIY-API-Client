@@ -16,11 +16,12 @@ export default function Home () {
     }, [])
 
     const postListItems = posts.map((post) => {
+        const truncDate = post.createdAt.slice(0, -14)
         return (
             <li key={`post-li ${post._id}`} style={{
                 listStyleType: "none"
             }}>
-                <Link to={`/blog/${post._id}`}>
+                {truncDate}: <Link to={`/blog/${post._id}`}>
                     {post.title}
                 </Link>
             </li>

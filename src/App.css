@@ -11,6 +11,12 @@ a:visited {
   color: grey;
 }
 
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 .App {
   text-align: center;
 }
