@@ -1,36 +1,9 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import PostForm from "../partials/PostForm"
+import { useState } from "react"
 
-export default function NewPost() {
-  const [form, setForm] = useState({
-    title: "",
-    body: "",
-    author: "",
-  });
-  const navigate = useNavigate()
-
-  const handleSubmit = async (e, form) => {
-    e.preventDefault();
-    try {
-        await fetch(`${process.env.REACT_APP_SERVER_URL}/blog`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify(form),
-        })
-        navigate("/")
-    } catch (error) {
-        console.log(error)
-    }
-  };
-  return (
-    <>
-      <p>Add a new post here</p>
-      <PostForm form={form} handleSubmit={handleSubmit}/>
-      {/* <form onSubmit={(e) => handleSubmit(e, form)}>
+export default function PostForm (props) {
+    const [form, setForm] = useState(props.form)
+    return(
+        <form onSubmit={(e) => props.handleSubmit(e, form)}>
         <div>
           <label htmlFor="title">Title</label>
           <input
@@ -62,7 +35,6 @@ export default function NewPost() {
           />
         </div>
         <button type="submit">Create Post</button>
-      </form> */}
-    </>
-  );
+      </form>
+    )
 }
