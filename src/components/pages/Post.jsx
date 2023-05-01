@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function Post() {
   const [post, setPost] = useState({});
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -15,6 +16,17 @@ export default function Post() {
     };
     fetchPost()
   }, []);
+
+  const handleDelete = async () => {
+    try {
+      await fetch(`${process.env.REACT_APP_SERVER_URL}/blog/${id}`, {
+        method: "DELETE",
+    })
+    navigate("/")
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   const loading = (
     <>
@@ -28,6 +40,7 @@ export default function Post() {
     <p>{post.body}</p>
     <p>author: {post.author}</p>
     <p>{post.createdAt}</p>
+    <button onClick={handleDelete}>Delete post</button>
     </>
   )
 
