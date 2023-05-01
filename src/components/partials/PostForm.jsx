@@ -34,7 +34,7 @@ export default function PostForm (props) {
             onChange={(e) => setForm({ ...form, author: e.target.value })}
           />
         </div>
-        <button type="submit">Create Post</button>
+        <button type="submit">{props.postVerb} Post</button>
       </form>
     )
 }
