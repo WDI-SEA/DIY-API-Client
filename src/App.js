@@ -10,6 +10,7 @@ import axios from 'axios'
 import './App.css';
 import Post from './components/Post';
 import PostDetails from './components/PostDetails';
+import EditPost from './components/EditPost';
 
 function App() {
 
@@ -56,8 +57,12 @@ function App() {
 
           <Route 
             path='/post/:id'
-            element={
-            <PostDetails />}
+            element={<PostDetails />}
+          />
+
+          <Route 
+            path='/post/:id/edit'
+            element={<EditPost />}
           />
 
 

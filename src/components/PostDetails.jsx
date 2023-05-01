@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 export default function PostDetails(props) {
@@ -33,7 +34,7 @@ export default function PostDetails(props) {
 
     console.log(details)
     
-    
+
 
     return(
         <div>
@@ -45,7 +46,7 @@ export default function PostDetails(props) {
           <p>{details.content}</p>
           <div>
             <button onClick={() => handleDeletePost(id)}>Delete</button>
-            <button>Edit</button>
+            <Link to={`/posts/${id}/edit`} >Edit</Link>
           </div>
         </>
       ) : (
