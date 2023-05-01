@@ -1,0 +1,12 @@
+---NOTES FOR ME---
+What routes are serving data that you can consume? 
+    - routes from the api that are serving data are the GET(/blog & /blog/:id) - home and blog for reading and listing . also the POST(/blog)- for creating PUT(/blog/:id)- for udating and  DELETE(/blog/:id)-- for removing blog. 
+    - on the client side  there is home route(/)- displaying navBar and list of clickable links to /:id to show contents. another route is /create to craetea a new post and /blog/:id to edit a form. 
+
+What React features will you need to implement? 
+    -Virtual dom
+    -react router dom
+    -components
+
+What kind of user experience would you like to create?
+    - I wnat to create a user experience where a user can read, edit, and delete blogs. I want the user to be able to navigate to different "pages" for full content and ability to create and  edit 
