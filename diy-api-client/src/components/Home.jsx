@@ -1,11 +1,14 @@
 import {useState, useEffect} from 'react'
 import axios from "axios"
-import {Link} from 'react-router-dom'
+import {useNavigate, useParams, Link} from 'react-router-dom'
+
 
 
 export default function Home() {
 
     const [loadOuts, setLoadOuts] = useState([])
+    const {id} = useParams()
+    const navigate = useNavigate()
 
     useEffect(()=> {
         const url = `${process.env.REACT_APP_SERVER_URL}/loadouts`
@@ -15,6 +18,23 @@ export default function Home() {
         })
         .catch(console.warn)
     }, [])
+
+    const handleDelete = async (e) => {
+        try{
+            console.log("clicked")
+            await axios.delete(`${process.env.REACT_APP_SERVER_URL}/loadouts/${e}`)
+         
+            const url = `${process.env.REACT_APP_SERVER_URL}/loadouts`
+            axios.get(url)
+            .then(response => {
+                setLoadOuts(response.data.results)
+            })
+            .catch(console.warn)
+            
+        }catch(err){
+            console.log(err)
+        }
+    }
 
     const loadOutMap = loadOuts.map((loadout, i)=> {
         return(
@@ -68,7 +88,7 @@ export default function Home() {
             </div> 
             <div>
             <button className="cardButton"><Link to={`/loadout/${loadout._id}`}>Edit Loadout</Link></button>
-            <button className="cardButton">Delete Loadout</button>
+            <button className="cardButton" onClick={() => handleDelete(loadout._id)}>Delete Loadout</button>
             </div>
             </div>
             </div>
@@ -84,7 +104,7 @@ export default function Home() {
     return (
         <>
         <h1>WZ loadouts</h1>
-        <button className="add"><Link className='addLink'>Add Loadout</Link></button>
+        <Link className='addLink' to='/loadout/create'><button className="add">Add Loadout</button></Link>
         <div className="container">
         
         {loadOutMap}
