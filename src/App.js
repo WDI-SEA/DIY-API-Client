@@ -11,6 +11,7 @@ import NotFound from "./components/pages/NotFound";
 import './App.css';
 
 function App() {
+
   return (
     <div className="App">
       <Router>
@@ -22,12 +23,12 @@ function App() {
           />
 
           <Route 
-            path="/review/new"
+            path="/reviews/new"
             element={<New />}
           />
 
           <Route 
-            path="/review/:id"
+            path="/reviews/:id"
             element={<Details />}
           />
 

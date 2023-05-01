@@ -32,7 +32,34 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.resultsCard {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 10px;
+}
+
+.resultsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.tagsArrayDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.tag {
+  background-color: blue;
+  margin: 10px;
 }
